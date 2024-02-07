@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../Assets/Styles/Sidebar.css'; // Import your sidebar-specific styles
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   const [theme, setTheme] = useState('default');
@@ -22,8 +22,8 @@ const Sidebar = () => {
             <span className="list-item-text">Overview</span>
           </li>
           <li className="list-item">
-            <Link to="ToDo"><i className="list-item-icon fas fa-search"></i>
-            <span className="list-item-text">Tasks</span></Link>
+            {/* <Link to="ToDo"><i className="list-item-icon fas fa-search"></i>
+            <span className="list-item-text">Tasks</span></Link> */}
             
           </li>
           <li className="list-item">
