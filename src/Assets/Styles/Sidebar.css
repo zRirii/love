@@ -3,14 +3,20 @@
     font-family: "Roboto", sans-serif;
   }
   
+  
   .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 180px;
     height: 100vh;
-    background-color: #111827;
-    color: #9ca3af;
+    background-color: var(--DarkModeBckg);
+    color: var(--DarkModeColor);
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 1000; 
+    overflow-y: auto; 
   }
   
   .sidebar-top,
@@ -43,6 +49,7 @@
   .brand {
     font-weight: bold;
     cursor: pointer;
+    font-size: 20px;
   }
   
   .list {
@@ -53,11 +60,13 @@
   
   .list-item {
     margin-bottom: 10px;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 550;
     cursor: pointer;
     padding: 10px;
     border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
   }
   
   .list-item-icon {
@@ -65,9 +74,9 @@
     font-size: 20px;
   }
   
-  .list-item.active,
-  .list-item:hover {
-    background-color: #374151;
+  .hover-list-item.active,
+  .hover-list-item:hover {
+    background-color: #556d9232;
     color: white;
   }
   
@@ -75,40 +84,34 @@
     width: 20px;
     height: 20px;
     border-radius: 5px;
-    border: 1px solid #9ca3af;
+    border: 1px solid #374151;
     margin-right: 15px;
     cursor: pointer;
   }
   
   .dark {
-    background-color: #111827;
+    background-color: var(--DarkModeBckg);
+    color: var(--DarkModeColor);
   }
   
   .night {
-    background-color: #312e81;
+    background-color: var(--nightModeBckgColor);
+    color: var(--nightModeColor);
   }
   
   .light {
-    background-color: #f3f4f6;
+    background-color: var(--lightModeBckg);
+    color: var(--lightModeColor);
   }
   
   .sidebar.night {
-    background-color: #312e81;
-    color: #b4bbc7;
+    background-color: var(--nightModeBckgColor);
+    color: var(--nightModeColor);
   }
-  
-  .list-item.night.active {
-    background-color: #4338ca;
-  }
-  
+    
   .sidebar.light {
-    background-color: #f3f4f6;
-    color: #111827;
-  }
-  
-  .list-item.light.active {
-    background-color: #d1d5db;
-    color: #111827;
+    background-color: var(--lightModeBckg);
+    color: var(--lightModeColor);
   }
   
   @media only screen and (max-width: 768px) {
@@ -127,3 +130,4 @@
         margin-top: 10px;
     }
   }
+
