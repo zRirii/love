@@ -1,0 +1,103 @@
+.react-datepicker__input-container {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .react-datepicker__input-container input {
+    font-family: 'Arial', sans-serif;
+    padding: 0.5rem;
+    border: 1.5px solid rgba(255, 255, 255, 0.326);
+    border-radius: 5px;
+    outline: none;
+    width: 200px; 
+    box-sizing: border-box;
+    color: #2f0839;
+    font-weight: bold;
+  }
+  
+  /* Style the calendar icon */
+  .react-datepicker__input-container input + .react-datepicker-wrapper .react-datepicker__input-container .react-datepicker__input-container input {
+    border-left: 1.5px solid rgba(255, 255, 255, 0.326);
+    border-radius: 0 5px 5px 0;
+  }
+  
+  /* Adjust the icon color on hover */
+  .react-datepicker__input-container input:hover + .react-datepicker-wrapper .react-datepicker__input-container .react-datepicker__input-container input {
+    background-color: #f0f0f000;
+  }
+  
+  /* Style the calendar dropdown */
+  .react-datepicker-popper {
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: inset -6px -4px 2px rgba(255, 255, 255, 0.03);
+    border: 1.5px solid rgba(255, 255, 255, 0.326);
+    border-radius: 0.75rem;
+    margin: 80px 50px;
+    color: #fffcfc;
+  }
+  /* Style the calendar itself */
+  .react-datepicker {
+    background: rgba(255, 255, 255, 0.1);
+    /* -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px); */
+    box-shadow: inset -6px -4px 2px rgba(255, 255, 255, 0.03);
+    border: 1.5px solid rgba(255, 255, 255, 0.326);
+    border-radius: 0.75rem;
+    color: #fffcfc;
+
+  }
+  
+  /* Style the header of the calendar */
+  .react-datepicker__header {
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.326);
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  /* Style the navigation arrows */
+  .react-datepicker__navigation {
+    top: 1.5rem;
+  }
+  
+  /* Style the month and year dropdowns */
+  .react-datepicker__current-month,
+  .react-datepicker__current-year {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  /* Style the weekdays row */
+  .react-datepicker__day-names {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem;
+    font-weight: bold;
+  }
+  
+  /* Style each day in the calendar */
+  .react-datepicker__day {
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #f0f0f0;
+      color: #2f0839;
+    }
+  
+    &.react-datepicker__day--selected {
+      background-color: #2f0839;
+      color: #fff;
+    }
+  }
+
+  .countdown-h2 {
+    padding: 10px 0;
+  }
+
+  .countdown-span {
+    padding: 10px 0;
+  }

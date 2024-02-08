@@ -45,20 +45,22 @@ const Sidebar = () => {
   return (
     <div className={`sidebar ${theme}`}>
       <div className="sidebar-top">
+        <Link className='list-item' to="Main">
         <i className="logo fab fa-sketch"></i>
         <span className="brand">Love</span>
+        </Link>
       </div>
       <div className="sidebar-center">
         <ul className="list">
           <li className={`list-item hover-list-item ${theme === 'default' ? 'active' : ''}`}>
-            <Link className="list-item " to="Main">
+            <Link className="list-item " to="Calendar">
               <img className='img-mode' src={theme === 'dark' ? DarkModeHeart : LightModeHeart} alt="" />
               <i className="list-item-icon fas fa-home"></i>
-              <span className="list-item-text">Overview</span>
+              <span className="list-item-text">Calendar</span>
             </Link>
           </li>
           <li className="list-item hover-list-item">
-            <Link className="list-item" to="ToDo">
+            <Link className="list-item" to="Pictures">
               <img className='img-mode' src={theme === 'dark' ? DarkModeHeart2: LightModeHeart2} alt="" />
               <i className="list-item-icon fas fa-search"></i>
               <span className="list-item-text">Pictures</span>
