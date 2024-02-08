@@ -2,7 +2,7 @@ import React from 'react';
 
 import Sidebar from './Layouts/Sidebar';
 import Main from './Layouts/Main';
-import ToDo from './Pages/Tasks';
+import ToDo from './Pages/Album';
 import Notes from './Pages/Notes';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';

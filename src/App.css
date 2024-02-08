@@ -1,11 +1,9 @@
 :root {
-    --DarkModeBckg: #24282f;
+    --DarkModeBckg: #24282f7a;
     --DarkModeColor: #ededed;;
 
-    --nightModeBckgColor: #efedee;
-    --nightModeColor: #24282f;
+    --lightModeBckg: #eff5fe37;
+    --lightModeColor: #0b111a;
 
-    --lightModeBckg: #ffb5ef;
-    --lightModeColor: #222831;
-
+    --bs-dark: #212529;
   }

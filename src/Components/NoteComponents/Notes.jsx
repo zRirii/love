@@ -4,48 +4,47 @@ import CreateNote from "./CreateNote";
 import Note from "./Note";
 import { v4 as uuid } from "uuid";
 
+const LOCAL_STORAGE_KEY = "Notes";
+
 function Notes() {
-  //states
   const [notes, setNotes] = useState([]);
   const [inputText, setInputText] = useState("");
 
-  // get text and store in state
   const textHandler = (e) => {
     setInputText(e.target.value);
   };
 
-  // add new note to the state array
-  const saveHandler = () => {
-    setNotes((prevState) => [
-      ...prevState,
-      {
-        id: uuid(),
-        text: inputText
-      }
-    ]);
-    //clear the textarea
+  const addNoteHandler = () => {
+    // Create a new note object
+    const newNote = {
+      id: uuid(),
+      text: inputText
+    };
+
+    // Update the state with all existing notes and the new one
+    setNotes((prevNotes) => [...prevNotes, newNote]);
+
+    // Clear the textarea
     setInputText("");
+
+    // Save the updated notes to local storage
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify([...notes, newNote]));
   };
 
-  //delete note function
   const deleteNote = (id) => {
     const filteredNotes = notes.filter((note) => note.id !== id);
     setNotes(filteredNotes);
+
+    // Save the updated notes to local storage
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(filteredNotes));
   };
 
-  //apply the save and get functions using useEffect
-  //get the saved notes and add them to the array
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("Notes"));
+    const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (data) {
       setNotes(data);
     }
   }, []);
-
-  //saving data to local storage
-  useEffect(() => {
-    localStorage.setItem("Notes", JSON.stringify(notes));
-  }, [notes]);
 
   return (
     <div className="notes">
@@ -59,7 +58,7 @@ function Notes() {
       ))}
       <CreateNote
         textHandler={textHandler}
-        saveHandler={saveHandler}
+        saveHandler={addNoteHandler}
         inputText={inputText}
       />
     </div>

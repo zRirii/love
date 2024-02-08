@@ -69,10 +69,13 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
 body {
-  background-image: url("https://i.ibb.co/cbHkZjQ/background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: "Montserrat";
+  background-image: url("https://pixewall.com/wp-content/uploads/2023/08/birthday-background729176198016-scaled.jpg");
+    min-height: inherit;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
+    margin-top: 0;  
 }
 
 .main {
@@ -116,3 +119,4 @@ body {
     grid-template-columns: repeat(1, minmax(300px, 1fr));
   }
 }
+
