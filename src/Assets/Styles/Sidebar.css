@@ -97,11 +97,6 @@
     color: var(--DarkModeColor);
   }
   
-  .night {
-    background-color: var(--nightModeBckgColor);
-    color: var(--nightModeColor);
-  }
-  
   .light {
     background-color: var(--lightModeBckg);
     color: var(--lightModeColor);
