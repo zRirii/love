@@ -108,9 +108,15 @@ body {
   grid-template-columns: repeat(3, minmax(300px, 1fr));
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1180px) {
   .notes {
     grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .notes {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
   }
 }
 
