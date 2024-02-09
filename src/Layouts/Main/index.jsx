@@ -13,7 +13,7 @@ const Main = () => {
     <div className="main">
       <Header />
       <div className="quote-section">
-        <p className='quote-text'>{quoteOfTheDay}</p>lala
+        <p className='quote-text'>{quoteOfTheDay}</p>laladsa
         {/* Any other components or content can go here */}
       </div>
     </div>
