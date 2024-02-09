@@ -105,10 +105,10 @@ const ImageGrid = () => {
   };
 
   return (
-    <div class="grid-container">
+    <div className="grid-container">
   {imageUrls.map((imageUrl, index) => (
-    <div class="grid-item" key={index}>
-      <img class="image" src={imageUrl} alt="" />
+    <div className="grid-item" key={index}>
+      <img className="image" src={imageUrl} alt="" />
     </div>
   ))}
 </div>

@@ -14,6 +14,8 @@ import DarkModeHeart2 from "../../Assets/Images/Eo_circle_indigo_heart.svg.png";
 import LightModeHeart3 from "../../Assets/Images/Eo_circle_blue_heart.svg.png";
 import DarkModeHeart3 from "../../Assets/Images/Eo_circle_cyan_heart.svg.png";
 
+import RequireSignIn from '../../Components/Auth/RequireSignIn';
+
 const Sidebar = () => {
   const [theme, setTheme] = useState("dark");
 
@@ -59,22 +61,31 @@ const Sidebar = () => {
               <span className="list-item-text">Calendar</span>
             </Link>
           </li>
+
           <li className="list-item hover-list-item">
-            <Link className="list-item" to="Pictures">
-              <img className='img-mode' src={theme === 'dark' ? DarkModeHeart2: LightModeHeart2} alt="" />
-              <i className="list-item-icon fas fa-search"></i>
-              <span className="list-item-text">Pictures</span>
-            </Link>
+              <RequireSignIn to="Pictures"> <Link className="list-item" to={'Pictures'}>
+                <img className='img-mode' src={theme === 'dark' ? DarkModeHeart2: LightModeHeart2} alt="" />
+                <i className="list-item-icon fas fa-search"></i>
+                <span className="list-item-text">Pictures</span>
+                </Link>
+              </RequireSignIn>
           </li>
+
           <li className="list-item hover-list-item">
-            <Link className="list-item" to="Notes">
-              <img className='img-mode' src={theme === 'dark' ? DarkModeHeart3 : LightModeHeart3} alt="" />
-              <i className="list-item-icon fas fa-stream"></i>
-              <span className="list-item-text">Notes</span>
-            </Link>
+            <RequireSignIn to="Notes">
+                <Link className="list-item" to="Notes">
+                  <img className='img-mode' src={theme === 'dark' ? DarkModeHeart3 : LightModeHeart3} alt="" />
+                  <i className="list-item-icon fas fa-stream"></i>
+                  <span className="list-item-text">Notes</span>
+                </Link>
+            </RequireSignIn>
           </li>
         </ul>
       </div>
+
+        <Link className="list-item" to="SignIn">
+          <span className="list-item-text">Login</span>
+        </Link>
 
       {/* Dark/Light Mode Toggle Button */}
       <div className={`theme-container shadow-${theme} change`} onClick={handleToggleTheme}>

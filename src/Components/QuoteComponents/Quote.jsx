@@ -40,11 +40,16 @@ const getRandomQuote = () => {
     return quotes[randomIndex];
   };
   
+  
   // Function to get a unique key for each day
   const getKeyForDay = () => {
     const today = new Date();
-    return `${today.getDate()}-${today.getMonth() + 1}-${today.getFullYear()}`;
+    const day = today.getDate();
+    const month = today.getMonth() + 1; // Months are 0-indexed, so we add 1
+    const year = today.getFullYear();
+    return `${day}-${month}-${year}`;
   };
+  
   
   // Function to get the quote of the day
   const getQuoteOfTheDay = () => {
@@ -65,6 +70,7 @@ const getRandomQuote = () => {
   // Example usage
   const quoteOfTheDay = getQuoteOfTheDay();
   console.log(quoteOfTheDay);
+  
   
   export default getQuoteOfTheDay;  // Export getQuoteOfTheDay instead of getRandomQuote
   
